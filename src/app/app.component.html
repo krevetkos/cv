@@ -1,0 +1,70 @@
+<main class="main">
+    <div class="background" #background (mousemove)="parallaxX($event)" [style.transform]="transition"></div>
+    <div class="wrapper" (mousemove)="parallaxX($event)">
+        <header class="header">
+            <div class="logo">
+                <a routerLink='/home' (click)="setHome()">
+                    <img src="assets/images/rocket.svg" alt="origami bird" class="logo_img">
+                </a>
+            </div>
+            <button class="header_hire" routerLink='/hire' (click)="setHire()">hire me</button>
+            <div class="navigation">
+                <div class="button" (click)="navTrigger()">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <div *ngIf="trigger; then navBlock">
+                </div>
+                <ng-template #navBlock>
+                    <div class="nav_wrapper">
+                        <ul class="nav_container">
+                            <li class="nav_item" routerLink='/home' (click)="navTrigger()" (click)="showIt($event)">home</li>
+                            <li class="nav_item" routerLink='/works' (click)="navTrigger()" (click)="showIt($event)">works</li>
+                            <li class="nav_item" routerLink='/about' (click)="navTrigger()" (click)="showIt($event)">about</li>
+                            <li class="nav_item" routerLink='/contacts' (click)="navTrigger()" (click)="showIt($event)">contacts</li>
+                            <li class="nav_item" routerLink='/hire' (click)="navTrigger()" (click)="showIt($event)">hire</li>
+                        </ul>
+                    </div>
+                </ng-template>
+            </div>
+        </header>
+        <main>
+            <div class="line_nav">
+                <div class="line_item" (click)="showThis($event)">
+                    <a routerLink='/home' [ngClass]="(this.state.state.home == true)?'active':''">
+                        <div class="line_dot"></div>
+                        <p>home</p>
+                    </a>
+                </div>
+                <div class="line_item" (click)="showThis($event)">
+                    <a routerLink='/works' [ngClass]="(this.state.state.works == true)?'active':''">
+                        <div class="line_dot"></div>
+                        <p>works</p>
+                    </a>
+                </div>
+                <div class="line_item" (click)="showThis($event)">
+                    <a routerLink='/about' [ngClass]="(this.state.state.about == true)?'active':''">
+                        <div class="line_dot"></div>
+                        <p>about</p>
+                    </a>
+                </div>
+                <div class="line_item" (click)="showThis($event)">
+                    <a routerLink='/contacts' [ngClass]="(this.state.state.contacts == true)?'active':''">
+                        <div class="line_dot"></div>
+                        <p>contacts</p>
+                    </a>
+                </div>
+                <div class="line_item" (click)="showThis($event)">
+                    <a routerLink='/hire' [ngClass]="(this.state.state.hire == true)?'active':''">
+                        <div class="line_dot"></div>
+                        <p>hire</p>
+                    </a>
+                </div>
+            </div>
+            <div class="page_wrapper">
+                <router-outlet></router-outlet>
+            </div>
+        </main>
+    </div>
+</main>

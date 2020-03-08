@@ -1,0 +1,48 @@
+.hire_wrapper {
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, .6);
+    box-shadow: 0 0 20px #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .hire_title {
+        color: white;
+        font-size: 24px;
+        text-align: center;
+        margin: 15px;
+    }
+    input {
+        height: 25px;
+        padding: 0 0 0 5px;
+    }
+    textarea {
+        padding: 5px 0 0 5px;
+    }
+    input,
+    textarea {
+        color: wheat;
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 10px;
+        border: none;
+        border-bottom: 1px solid gray;
+        border-radius: 4px;
+        background-color: rgba(159, 145, 145, 0.6);
+    }
+    input::placeholder,
+    textarea::placeholder {
+        color: wheat;
+    }
+    .hire_btn {
+        width: 150px;
+        height: 30px;
+        border: none;
+        background-color: #73c246;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}

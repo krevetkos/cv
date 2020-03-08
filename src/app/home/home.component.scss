@@ -1,0 +1,31 @@
+.content {
+    &_about {
+        height: 60vh;
+        position: relative;
+        border-left: 1px solid wheat;
+        border-bottom: 1px solid wheat;
+    }
+    &_text {
+        color: wheat;
+        text-transform: uppercase;
+        margin-left: 5vw;
+    }
+    &_name {
+        font-size: 4rem;
+    }
+    &_profession {
+        font-size: 3rem;
+    }
+    &_img {
+        position: absolute;
+        right: 15%;
+        bottom: 0;
+        width: 35%;
+    }
+    &_bg {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        z-index: -5;
+    }
+}

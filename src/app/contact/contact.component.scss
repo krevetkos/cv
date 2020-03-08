@@ -1,0 +1,47 @@
+.contact_wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: -50px;
+    display: flex;
+    align-items: flex-start;
+    .contact_map {
+        max-width: 100%;
+    }
+}
+
+.contact_me {
+    position: absolute;
+    top: 15%;
+    right: 100px;
+    color: white;
+    height: 500px;
+    width: 300px;
+    background-color: rgba(0, 0, 0, .6);
+    box-shadow: 0 0 20px #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .contacts_address {
+        font-size: 18px;
+    }
+    a {
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        margin: 18px 0;
+    }
+}
+
+.contacts_social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .social_item {
+        margin: 10px 0;
+        img {
+            width: 75px;
+            height: 75px;
+        }
+    }
+}
