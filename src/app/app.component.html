@@ -30,38 +30,41 @@
             </div>
         </header>
         <main>
-            <div class="line_nav">
-                <div class="line_item" (click)="showThis($event)">
-                    <a routerLink='/home' [ngClass]="(this.state.state.home == true)?'active':''">
-                        <div class="line_dot"></div>
-                        <p>home</p>
-                    </a>
-                </div>
-                <div class="line_item" (click)="showThis($event)">
-                    <a routerLink='/works' [ngClass]="(this.state.state.works == true)?'active':''">
-                        <div class="line_dot"></div>
-                        <p>works</p>
-                    </a>
-                </div>
-                <div class="line_item" (click)="showThis($event)">
-                    <a routerLink='/about' [ngClass]="(this.state.state.about == true)?'active':''">
-                        <div class="line_dot"></div>
-                        <p>about</p>
-                    </a>
-                </div>
-                <div class="line_item" (click)="showThis($event)">
-                    <a routerLink='/contacts' [ngClass]="(this.state.state.contacts == true)?'active':''">
-                        <div class="line_dot"></div>
-                        <p>contacts</p>
-                    </a>
-                </div>
-                <div class="line_item" (click)="showThis($event)">
-                    <a routerLink='/hire' [ngClass]="(this.state.state.hire == true)?'active':''">
-                        <div class="line_dot"></div>
-                        <p>hire</p>
-                    </a>
+            <div class="line_wrapper">
+                <div class="line_nav">
+                    <div class="line_item" (click)="showThis($event)">
+                        <a routerLink='/home' [ngClass]="(this.state.state.home == true)?'active':''">
+                            <div class="line_dot"></div>
+                            <p>home</p>
+                        </a>
+                    </div>
+                    <div class="line_item" (click)="showThis($event)">
+                        <a routerLink='/works' [ngClass]="(this.state.state.works == true)?'active':''">
+                            <div class="line_dot"></div>
+                            <p>works</p>
+                        </a>
+                    </div>
+                    <div class="line_item" (click)="showThis($event)">
+                        <a routerLink='/about' [ngClass]="(this.state.state.about == true)?'active':''">
+                            <div class="line_dot"></div>
+                            <p>about</p>
+                        </a>
+                    </div>
+                    <div class="line_item" (click)="showThis($event)">
+                        <a routerLink='/contacts' [ngClass]="(this.state.state.contacts == true)?'active':''">
+                            <div class="line_dot"></div>
+                            <p>contacts</p>
+                        </a>
+                    </div>
+                    <div class="line_item" (click)="showThis($event)">
+                        <a routerLink='/hire' [ngClass]="(this.state.state.hire == true)?'active':''">
+                            <div class="line_dot"></div>
+                            <p>hire</p>
+                        </a>
+                    </div>
                 </div>
             </div>
+
             <div [@sliderAnimation]="prepareRouter(outlet)" class="page_wrapper">
                 <router-outlet #outlet="outlet"></router-outlet>
             </div>
