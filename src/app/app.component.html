@@ -1,5 +1,5 @@
 <main class="main">
-    <div class="background" #background (mousemove)="parallaxX($event)" [style.transform]="transition"></div>
+    <div class="background" #background (mousemove)="parallaxX($event)" [style.transform]="trans"></div>
     <div class="wrapper" (mousemove)="parallaxX($event)">
         <header class="header">
             <div class="logo">
@@ -14,7 +14,7 @@
                     <div class="line"></div>
                     <div class="line"></div>
                 </div>
-                <div *ngIf="trigger; then navBlock">
+                <div *ngIf="tri; then navBlock">
                 </div>
                 <ng-template #navBlock>
                     <div class="nav_wrapper">
@@ -62,8 +62,8 @@
                     </a>
                 </div>
             </div>
-            <div class="page_wrapper">
-                <router-outlet></router-outlet>
+            <div [@sliderAnimation]="prepareRouter(outlet)" class="page_wrapper">
+                <router-outlet #outlet="outlet"></router-outlet>
             </div>
         </main>
     </div>

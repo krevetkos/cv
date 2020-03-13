@@ -7,12 +7,12 @@ import {ContactComponent} from './contact/contact.component';
 import {HireComponent} from './hire/hire.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'works', component: WorksComponent },
-  {path:'about', component: AboutComponent},
-  {path:'contacts', component: ContactComponent},
-  {path:'hire',component:HireComponent}
+  { path: '', component: HomeComponent, data: { animation: 'Home'}},
+  { path: 'home', component: HomeComponent, data: { animation: 'Home'}},
+  { path: 'works', component: WorksComponent , data: { animation: 'Works'}},
+  { path:'about', component: AboutComponent , data: { animation: 'About'}},
+  { path:'contacts', component: ContactComponent , data: { animation: 'Contacts'}},
+  { path:'hire',component:HireComponent , data: { animation: 'Hire'}}
 ];
 
 @NgModule({

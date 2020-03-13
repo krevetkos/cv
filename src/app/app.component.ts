@@ -1,23 +1,21 @@
 import { Component,OnInit,ViewChild,ElementRef } from '@angular/core';
-import {Router} from "@angular/router";
-// import { map} from 'rxjs/operators';
-// import { from, pipe } from 'rxjs';
-import {StateHolder} from "./service/state.holder";
+import { Router, RouterOutlet } from "@angular/router";
+import { StateHolder } from "./service/state.holder";
+import { slider } from './route-animation';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
-})
+  styleUrls: ['./app.component.scss'],
+  animations: [slider]})
 export class AppComponent implements OnInit {
   title = 'global';
-  transition:string;
-  trigger:boolean = false;
+  trans:string;
+  tri:boolean = false;
   @ViewChild('background', {static: false}) background: ElementRef;
-  
+
   constructor(public state:StateHolder, public rout: Router) { }
 
   ngOnInit() {
-    console.log(window.location.pathname)
     for(let s in this.state.state){
       this.state.state[s] = false;
       if(window.location.pathname.slice(1) === s){
@@ -26,13 +24,16 @@ export class AppComponent implements OnInit {
       if(window.location.pathname == "/"){
         this.state.state.home = true;
       }
-    }  
+    }
+  }
+  prepareRouter( outlet: RouterOutlet ) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
    parallaxX($event){
-     this.transition = `translate(${$event.clientX/10}px,${$event.clientY/10}px)`
+     this.trans = `translate(${$event.clientX/10}px,${$event.clientY/10}px)`
   };
   navTrigger(){
-    this.trigger = !this.trigger;
+    this.tri = !this.tri;
   }
   showThis($event){
     this.state.lineController($event);
@@ -43,13 +44,13 @@ export class AppComponent implements OnInit {
   }
   setHire(){
     for(let s in this.state.state){
-      this.state.state[s] = false; 
+      this.state.state[s] = false;
     }
     this.state.state.hire = true;
   }
   setHome(){
     for(let s in this.state.state){
-      this.state.state[s] = false; 
+      this.state.state[s] = false;
     }
     this.state.state.home = true;
   }

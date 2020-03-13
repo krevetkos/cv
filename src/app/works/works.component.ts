@@ -45,7 +45,6 @@ LastItem: number = this.state;
 
   ngOnInit() {
     this.makeCurImg(this.items, this.currentImg, this.FirstItem, this.LastItem);
-    console.log(this.currentImg)
   }
 
   makeCurImg = function(store, curImg, first, last) {
