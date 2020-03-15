@@ -1,66 +1,94 @@
-* {
-    box-sizing: border-box;
-}
-
-.my_work {
-    color: white;
-    font-size: 42px;
-    text-align: center;
-    margin: 0;
-}
-
-.carousel_wrapper {
-    margin-top: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    .left_btn {
-        height: 30px;
-        width: 30px;
-        border-bottom: solid white 2px;
-        border-left: solid white 2px;
-        transform: rotate(45deg);
+    * {
+        box-sizing: border-box;
     }
-    .carousel_container {
-        height: 400px;
-        width: 80%;
+
+    .carousel_wrapper {
         display: flex;
         align-items: center;
-        .carousel_item {
-            height: 60%;
-            width: 30%;
-            position: relative;
-            box-shadow: 0 0 20px rgba(245, 222, 179, 0.605);
-            .carousel_item_img {
-                width: 100%;
-                height: 100%;
+        justify-content: space-around;
+        .left_btn {
+            height: 30px;
+            width: 30px;
+            border-bottom: solid white 2px;
+            border-left: solid white 2px;
+            transform: rotate(45deg);
+        }
+        .carousel_container {
+            height: 80vw;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            .carousel_item {
+                height: 60%;
+                width: 30%;
+                position: relative;
+                box-shadow: 0 0 20px rgba(245, 222, 179, 0.605);
+                .carousel_item_img {
+                    width: 100%;
+                    height: 100%;
+                }
+                .title_item_wrapper {
+                    height: 15%;
+                    width: 100%;
+                    background-color: rgba(245, 222, 179, 0.605);
+                    position: absolute;
+                    bottom: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .item_title {
+                        color: black;
+                        font-size: 150%;
+                        margin: 0;
+                    }
+                }
             }
-            .title_item_wrapper {
-                height: 15%;
-                width: 100%;
-                background-color: rgba(245, 222, 179, 0.605);
-                position: absolute;
-                bottom: 0;
+            .active {
+                height: 80%;
+                width: 40%;
+            }
+        }
+        .right_btn {
+            height: 30px;
+            width: 30px;
+            border-bottom: solid white 2px;
+            border-right: solid white 2px;
+            transform: rotate(-45deg);
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .carousel_wrapper {
+            .carousel_container {
+                height: 50vw;
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                .item_title {
-                    color: black;
-                    font-size: 150%;
-                    margin: 0;
+                justify-content: space-between;
+                .carousel_item {
+                    height: 100%;
+                    width: 49%;
+                    .carousel_item_img {
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
         }
-        .active {
-            height: 80%;
-            width: 40%;
+    }
+
+    @media screen and (max-width: 600px) {
+        .carousel_wrapper {
+            .carousel_container {
+                height: 80vw;
+                display: flex;
+                justify-content: space-between;
+                .carousel_item {
+                    height: 100%;
+                    width: 100%;
+                    .carousel_item_img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
         }
     }
-    .right_btn {
-        height: 30px;
-        width: 30px;
-        border-bottom: solid white 2px;
-        border-right: solid white 2px;
-        transform: rotate(-45deg);
-    }
-}

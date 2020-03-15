@@ -1,4 +1,4 @@
-import { Component,OnInit,ViewChild,ElementRef } from '@angular/core';
+import { Component,OnInit,ViewChild,ElementRef, AfterContentInit, AfterViewInit } from '@angular/core';
 import { Router, RouterOutlet } from "@angular/router";
 import { StateHolder } from "./service/state.holder";
 import { slider } from './route-animation';
@@ -7,14 +7,13 @@ import { slider } from './route-animation';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [slider]})
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterContentInit {
   title = 'global';
   trans:string;
   tri:boolean = false;
-  @ViewChild('background', {static: false}) background: ElementRef;
-
   constructor(public state:StateHolder, public rout: Router) { }
 
+  @ViewChild('main', {static: true}) main: ElementRef;
   ngOnInit() {
     for(let s in this.state.state){
       this.state.state[s] = false;
@@ -26,10 +25,17 @@ export class AppComponent implements OnInit {
       }
     }
   }
+  ngAfterContentInit(): void {
+    console.log(this.main.nativeElement.offsetHeight)
+  }
+
   prepareRouter( outlet: RouterOutlet ) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
    parallaxX($event){
+     if((window.screen.width < window.screen.height)&&window.navigator.maxTouchPoints > 0){
+       return
+     }
      this.trans = `translate(${$event.clientX/10}px,${$event.clientY/10}px)`
   };
   navTrigger(){

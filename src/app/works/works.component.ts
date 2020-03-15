@@ -44,7 +44,16 @@ LastItem: number = this.state;
   constructor() { }
 
   ngOnInit() {
+    if(window.screen.width < 475){
+      this.state = 1
+      this.LastItem = this.state
+    }
+    if(window.screen.width < 600 && window.screen.width > 475){
+      this.state = 2
+      this.LastItem = this.state
+    }
     this.makeCurImg(this.items, this.currentImg, this.FirstItem, this.LastItem);
+    console.log(this.currentImg)
   }
 
   makeCurImg = function(store, curImg, first, last) {
@@ -55,17 +64,31 @@ LastItem: number = this.state;
         for (let i = 0; i < last; i++) {
             curImg.push(store[i]);
         }
-        curImg[0].class = 'carousel_item';
-        curImg[1].class = 'carousel_item active';
-        curImg[2].class = 'carousel_item';
+        if(this.state === 1){
+          curImg[0].class = 'carousel_item';
+        } else if(this.state <= 2 ){
+          curImg[0].class = 'carousel_item';
+          curImg[1].class = 'carousel_item';
+        } else {
+          curImg[0].class = 'carousel_item';
+          curImg[1].class = 'carousel_item active';
+          curImg[2].class = 'carousel_item';
+        }
     } else {
         for (let i = first; i < last; i++) {
             curImg.push(store[i]);
         }
-        curImg[0].class = 'carousel_item';
-        curImg[1].class = 'carousel_item active';
-        curImg[2].class = 'carousel_item';
-    }
+        if(this.state === 1){
+          curImg[0].class = 'carousel_item';
+        } else if(this.state <= 2 ){
+          curImg[0].class = 'carousel_item';
+          curImg[1].class = 'carousel_item';
+        } else {
+          curImg[0].class = 'carousel_item';
+          curImg[1].class = 'carousel_item active';
+          curImg[2].class = 'carousel_item';
+        }
+      }
 }
 clearHTML = function(container) {
   if (container.length != 0) {

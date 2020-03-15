@@ -24,6 +24,7 @@
 .wrapper {
     margin: 0;
     width: 100%;
+    height: 100%;
 }
 
 .header {
@@ -90,7 +91,8 @@
     }
 }
 
-main {
+.main_content {
+    height: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -150,5 +152,63 @@ main {
 @media screen and (max-width: 1200px) {
     .line_wrapper {
         width: 15%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main {
+        height: 100%;
+        position: relative;
+        background-image: url(../assets/images/space.png);
+    }
+    .background {
+        display: none;
+    }
+    .header {
+        width: 100%;
+        margin-top: 3vw;
+        .logo {
+            width: 35px;
+            margin: 2vw 0 0 2vw;
+            .logo_img {
+                width: 100%;
+            }
+        }
+    }
+    .line_wrapper {
+        width: 100%;
+    }
+    .line_nav {
+        background-color: #1b1b1b;
+        width: 98vw;
+        height: 2px;
+        margin: 5vh 1vw 0 1vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .line_item {
+        position: relative;
+        .line_dot {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        p {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            font-size: 3vw;
+            color: #454242;
+        }
+    }
+    .main_content {
+        display: flex;
+        flex-direction: column;
+    }
+    .page_wrapper {
+        height: 100%;
+        margin: 5vh 0 0 0;
+        padding: 0 2vw 0 2vw;
     }
 }

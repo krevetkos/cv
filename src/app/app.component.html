@@ -1,5 +1,5 @@
-<main class="main">
-    <div class="background" #background (mousemove)="parallaxX($event)" [style.transform]="trans"></div>
+<main class="main" #main>
+    <div class="background" (mousemove)="parallaxX($event)" [style.transform]="trans"></div>
     <div class="wrapper" (mousemove)="parallaxX($event)">
         <header class="header">
             <div class="logo">
@@ -29,7 +29,7 @@
                 </ng-template>
             </div>
         </header>
-        <main>
+        <main class="main_content">
             <div class="line_wrapper">
                 <div class="line_nav">
                     <div class="line_item" (click)="showThis($event)">

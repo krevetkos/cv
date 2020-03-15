@@ -29,3 +29,38 @@
         z-index: -5;
     }
 }
+
+@media screen and (max-width: 800px) {
+    .content {
+        &_about {
+            height: 90vw;
+            position: relative;
+            border-left: 1px solid wheat;
+            border-bottom: 1px solid wheat;
+        }
+        &_text {
+            color: wheat;
+            text-transform: uppercase;
+            margin-left: 5vw;
+        }
+        &_name {
+            font-size: 8vw;
+        }
+        &_profession {
+            font-size: 6vw;
+        }
+        &_img {
+            position: absolute;
+            right: 15%;
+            bottom: 0;
+            width: 35%;
+            z-index: 1;
+        }
+        &_bg {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            z-index: 0;
+        }
+    }
+}
