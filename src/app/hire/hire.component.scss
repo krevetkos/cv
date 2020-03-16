@@ -40,9 +40,30 @@
         width: 150px;
         height: 30px;
         border: none;
+        margin-left: 50%;
+        transform: translateX(-50%);
         background-color: #73c246;
         color: white;
         text-transform: uppercase;
         font-weight: 700;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .hire_wrapper {
+        margin-top: 0px;
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .hire_wrapper {
+        width: 75vw;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .hire_wrapper {
+        width: 90vw;
     }
 }

@@ -45,3 +45,27 @@
         }
     }
 }
+
+@media screen and (max-width: 800px) {
+    .contact_wrapper {
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+        .contact_me {
+            position: relative;
+            display: flex;
+            height: 100%;
+            margin: 0 auto;
+            left: 0;
+        }
+    }
+    .contacts_social {
+        flex-direction: row;
+        .social_item {
+            img {
+                width: 9vw;
+                height: 9vw;
+            }
+        }
+    }
+}

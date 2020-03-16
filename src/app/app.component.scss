@@ -162,7 +162,11 @@
         background-image: url(../assets/images/space.png);
     }
     .background {
-        display: none;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
     }
     .header {
         width: 100%;
